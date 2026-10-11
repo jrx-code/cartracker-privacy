@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy: JI Car Tracker (eu.iwanus.cartracker)</title>
+<style>
+ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;line-height:1.6;color:#1a1a1a}
+ h1{font-size:1.6rem} h2{font-size:1.15rem;margin-top:2rem} code{background:#f0f0f0;padding:.1rem .3rem;border-radius:4px}
+ .muted{color:#666;font-size:.9rem}
+</style>
+</head>
+<body>
+<h1>Privacy Policy: JI Car Tracker</h1>
+<p class="muted">Application ID: <code>eu.iwanus.cartracker</code> · Last updated: 11 October 2026 · Earlier name: Car Tracker</p>
+
+<p><strong>Developer:</strong> JI ENGINEERING (Google Play developer account “JI Engineering”), contact <a href="mailto:engineering@iwanus.eu">engineering@iwanus.eu</a>.</p>
+
+<p>JI Car Tracker shows the cars of a private fleet fitted with the owner's GPS/LTE trackers: live position, trips and tracker status. The owner of the fleet, who is also the developer, runs the MQTT broker the app connects to and grants the accounts. The app is distributed through Google Play testing tracks to the owner and the people the owner gives access to.</p>
+
+<h2>What data the app processes and where it goes</h2>
+<ul>
+ <li><strong>Vehicle data</strong> received from the owner's broker over TLS: the cars' position (vehicle location, not the phone's), trips, events (trip start and end, motion alarm, low battery, hibernation, offline) and tracker status.</li>
+ <li><strong>Requests and commands</strong> sent to the owner's broker with the granted account: trip history queries and the commands Locate, Ping and Restart.</li>
+ <li><strong>Map tiles</strong> are downloaded from the OpenStreetMap tile servers, a third party. Like any web request, they receive the requested map area, the phone's IP address and the app ID as User-Agent. See the <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation privacy policy</a>.</li>
+</ul>
+<p>The app does not read the phone's own location and has no location permission. The broker is operated by the owner (the developer) solely to provide this function. Apart from the map tile requests above and the place-name lookup described below, no data is shared with third parties; nothing is sold or used for advertising. The app contains no analytics, advertising or tracking SDK and no Google Play services; it uses the open-source libraries HiveMQ MQTT Client, osmdroid and Gson.</p>
+
+<h2>What the owner's fleet system does with it</h2>
+<p>The fleet system stores positions and trips in the owner's own database and passes them to the owner's own home automation system. To name trip start and end points, it sends those two <strong>coordinates</strong> (rounded, cached) to the OpenStreetMap Nominatim service, a third party; see the OSMF privacy policy above. No other data leaves the owner's systems.</p>
+
+<h2>Retention and deletion</h2>
+<p>On the phone the app keeps, in encrypted app-private storage (Android EncryptedSharedPreferences), which account it uses and which features are switched on. Uninstalling the app removes them. Vehicle positions and trips are kept by the owner's fleet system, linked to the vehicle and not to the app account, until the owner deletes them; the owner's home automation system, logs and backups hold copies that follow the owner's retention schedule, and a deletion request covers them too. Nominatim receives only coordinates, without any account or vehicle identifier. To ask for deletion of data or of your access, write to the contact address above.</p>
+
+<h2>Notifications</h2>
+<p>When the user turns notifications on, a foreground service keeps its own connection to the owner's broker and shows the vehicle events listed above. It requests <code>POST_NOTIFICATIONS</code> and restarts after a reboot or app update.</p>
+
+<h2>Permissions</h2>
+<p><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>, <code>POST_NOTIFICATIONS</code>, <code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_REMOTE_MESSAGING</code>, <code>RECEIVE_BOOT_COMPLETED</code>. No location, camera, contacts or storage permission.</p>
+
+<h2>Children</h2>
+<p>The app is an owner tool and is not directed at children.</p>
+
+<h2>Changes</h2>
+<p>An updated policy will be published at this URL with a new date.</p>
+
+<hr>
+
+<div lang="pl">
+<h1>Polityka prywatności: JI Car Tracker</h1>
+<p><strong>Twórca:</strong> JI ENGINEERING (konto dewelopera Google Play „JI Engineering”), kontakt <a href="mailto:engineering@iwanus.eu">engineering@iwanus.eu</a>.</p>
+<p>JI Car Tracker pokazuje auta prywatnej floty wyposażone w trackery GPS/LTE właściciela: pozycję na żywo, trasy i stan trackera. Właściciel floty, który jest też twórcą aplikacji, prowadzi broker MQTT, z którym łączy się aplikacja, i przydziela konta. Aplikacja jest udostępniana przez ścieżki testowe Google Play właścicielowi i osobom, którym właściciel dał dostęp.</p>
+<h2>Jakie dane aplikacja przetwarza i dokąd trafiają</h2>
+<ul>
+ <li><strong>Dane pojazdów</strong> odbierane z brokera właściciela przez TLS: pozycja aut (lokalizacja pojazdu, nie telefonu), trasy, zdarzenia (start i koniec jazdy, alarm ruchu, niski akumulator, hibernacja, brak łączności) i stan trackera.</li>
+ <li><strong>Zapytania i polecenia</strong> wysyłane do brokera właściciela z przydzielonego konta: historia tras oraz polecenia Zlokalizuj, Ping i Restart.</li>
+ <li><strong>Kafelki mapy</strong> pobierane z serwerów OpenStreetMap, czyli strony trzeciej. Jak przy każdym zapytaniu WWW otrzymują one żądany obszar mapy, adres IP telefonu i identyfikator aplikacji jako User-Agent. Zobacz <a href="https://osmfoundation.org/wiki/Privacy_Policy">politykę prywatności OpenStreetMap Foundation</a>.</li>
+</ul>
+<p>Aplikacja nie odczytuje lokalizacji telefonu i nie ma uprawnienia do lokalizacji. Broker prowadzi właściciel (twórca) wyłącznie w celu działania tej funkcji. Poza zapytaniami o kafelki mapy i opisanym niżej ustalaniem nazw miejsc dane nie są udostępniane osobom trzecim; nie są sprzedawane ani używane do reklam. Aplikacja nie zawiera bibliotek analitycznych, reklamowych ani śledzących i nie używa usług Google Play; korzysta z bibliotek open source HiveMQ MQTT Client, osmdroid i Gson.</p>
+<h2>Co z danymi robi system floty właściciela</h2>
+<p>System floty zapisuje pozycje i trasy we własnej bazie właściciela i przekazuje je do jego własnego systemu automatyki domowej. Aby nazwać początek i koniec trasy, wysyła te dwa <strong>punkty współrzędnych</strong> (zaokrąglone, z pamięcią podręczną) do usługi OpenStreetMap Nominatim, czyli strony trzeciej; zobacz politykę OSMF wyżej. Żadne inne dane nie opuszczają systemów właściciela.</p>
+<h2>Przechowywanie i usuwanie</h2>
+<p>Na telefonie aplikacja trzyma w zaszyfrowanej pamięci prywatnej, którego konta używa i które funkcje są włączone. Odinstalowanie aplikacji je usuwa. Pozycje i trasy aut przechowuje system floty właściciela, przypisane do auta, a nie do konta w aplikacji, dopóki właściciel ich nie usunie; system automatyki domowej, logi i kopie zapasowe właściciela mają ich kopie, które wygasają zgodnie z jego harmonogramem, a prośba o usunięcie obejmuje także je. Nominatim otrzymuje tylko współrzędne, bez identyfikatora konta ani auta. O usunięcie danych lub dostępu można poprosić pod adresem kontaktowym.</p>
+<h2>Powiadomienia</h2>
+<p>Po włączeniu powiadomień usługa pierwszoplanowa utrzymuje własne połączenie z brokerem właściciela i pokazuje wymienione wyżej zdarzenia pojazdów. Prosi o <code>POST_NOTIFICATIONS</code> i uruchamia się ponownie po restarcie telefonu lub aktualizacji aplikacji.</p>
+<h2>Uprawnienia</h2>
+<p><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>, <code>POST_NOTIFICATIONS</code>, <code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_REMOTE_MESSAGING</code>, <code>RECEIVE_BOOT_COMPLETED</code>.</p>
+<h2>Dzieci</h2>
+<p>Aplikacja jest narzędziem właściciela i nie jest skierowana do dzieci.</p>
+<h2>Zmiany</h2>
+<p>Zaktualizowana polityka zostanie opublikowana pod tym adresem, z nową datą.</p>
+</div>
+</body>
+</html>
